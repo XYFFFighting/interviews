@@ -6,18 +6,17 @@
 //Follow up:
 //Could you do it without any loop/recursion in O(1) runtime?
 
-class AddDigits {
+public class AddDigits {
     public int addDigits(int num) {
-        while(num >= 10) {
-            int temp = 0;
-            while(num > 0) {
-                temp += num % 10;
-                num /= 10;
-            }
-            num = temp;
+        if(num % 9 != 0){
+            return num % 9;
         }
-        
-        return num;
+        return 9;
+    }
+
+    public static void main(String[] args) {
+        AddDigits addDigits = new AddDigits();
+        System.out.println(addDigits.addDigits(38));
     }
 }
 
